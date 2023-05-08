@@ -1,15 +1,17 @@
   {
     "name": "File Downloader sample",
-    "manifest_version": 2,
+    "manifest_version": 3,
     "version": "1.0.0",
     "content_scripts": [{
       "matches": ["https://www.google.com/"],
-      "js": ["content.js"]
+      "js": ["populator.js","content.js"]
     }],
     "background": {
-        "scripts": ["background.js", "populator.js"],
-        "persistent": false
+        "service_worker": "background.js"
       },
-    "permissions": ["activeTab", "storage", "http://hello/*", "https://*/*"]
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": [
+      "https://www.blogger.com/", "https://www.nseindia.com/*"
+    ]
   }
   
