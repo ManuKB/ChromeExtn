@@ -1,14 +1,9 @@
-  chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', request.url, true);
-    xhr.onload = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        sendResponse(xhr.responseText);
-      }
-    };
-    xhr.send();
-    return true;
-
-  });
-  
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.url) {
+    fetch(request.url)
+      .then(response => response.json())
+      .then(data => sendResponse(data))
+      .catch(error => console.error(error));
+    return true;  // need to return true to keep the sendResponse() function alive
+  }
+});
