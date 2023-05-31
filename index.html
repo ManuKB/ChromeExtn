@@ -1,76 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Simple Web Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">My Website</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    
-    <div class="container mt-4">
-      <h1>Welcome to My Website</h1>
-      <p>This is a simple web page built using Bootstrap.</p>
-      <p>Bootstrap is a popular front-end framework for building responsive, mobile-first websites.</p>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-      
-    </div>
-    
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="stock.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
+<head>
+    <script src='populator.js'></script>
+    <script src='tradeUtils.js'></script>
+    <script src="mainPage.js"></script>
+    <script>
+        document.getElementsByTagName("html")[0].innerHTML = mainPage().content;
+        data = '{"currentPrice":18314.8,"timestamp":"12-May-2023 15:30:00","total":{"CE":{"totOI":1349688,"totVol":21239434},"PE":{"totOI":1463995,"totVol":19938680}},"strikePrices":[{"strikePrice":18200,"expiryDate":"18-May-2023","CE":{"strikePrice":18200,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18200.00","openInterest":44576,"changeinOpenInterest":24491,"pchangeinOpenInterest":121.93676873288524,"totalTradedVolume":1652776,"impliedVolatility":7.28,"lastPrice":163.45,"change":-18,"pChange":-9.920088178561588,"totalBuyQuantity":251000,"totalSellQuantity":115400,"bidQty":50,"bidprice":162.35,"askQty":50,"askPrice":163.3,"underlyingValue":18314.8},"PE":{"strikePrice":18200,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18200.00","openInterest":138436,"changeinOpenInterest":77850,"pchangeinOpenInterest":128.4950318555442,"totalTradedVolume":2867831,"impliedVolatility":11.06,"lastPrice":46.55,"change":-7.150000000000006,"pChange":-13.314711359404107,"totalBuyQuantity":257450,"totalSellQuantity":1115200,"bidQty":2250,"bidprice":46.55,"askQty":600,"askPrice":46.75,"underlyingValue":18314.8}},{"strikePrice":18250,"expiryDate":"18-May-2023","CE":{"strikePrice":18250,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18250.00","openInterest":23279,"changeinOpenInterest":12205,"pchangeinOpenInterest":110.21311179338993,"totalTradedVolume":1601816,"impliedVolatility":7.67,"lastPrice":128.8,"change":-18.75,"pChange":-12.707556760420196,"totalBuyQuantity":408150,"totalSellQuantity":142550,"bidQty":700,"bidprice":128.35,"askQty":100,"askPrice":128.9,"underlyingValue":18314.8},"PE":{"strikePrice":18250,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18250.00","openInterest":55046,"changeinOpenInterest":36800,"pchangeinOpenInterest":201.68804121451277,"totalTradedVolume":1789241,"impliedVolatility":10.94,"lastPrice":62,"change":-6.900000000000006,"pChange":-10.014513788098702,"totalBuyQuantity":135400,"totalSellQuantity":562600,"bidQty":1050,"bidprice":61.7,"askQty":4650,"askPrice":61.75,"underlyingValue":18314.8}},{"strikePrice":18300,"expiryDate":"18-May-2023","PE":{"strikePrice":18300,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18300.00","openInterest":128905,"changeinOpenInterest":43320,"pchangeinOpenInterest":50.61634632236957,"totalTradedVolume":2903011,"impliedVolatility":10.82,"lastPrice":80.5,"change":-7.549999999999997,"pChange":-8.574673480976715,"totalBuyQuantity":296650,"totalSellQuantity":747200,"bidQty":6950,"bidprice":80.15,"askQty":14850,"askPrice":80.4,"underlyingValue":18314.8},"CE":{"strikePrice":18300,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18300.00","openInterest":124043,"changeinOpenInterest":36955,"pchangeinOpenInterest":42.43408965643946,"totalTradedVolume":3788653,"impliedVolatility":7.76,"lastPrice":97.2,"change":-18.700000000000003,"pChange":-16.134598792062125,"totalBuyQuantity":1527250,"totalSellQuantity":555050,"bidQty":950,"bidprice":97.2,"askQty":50,"askPrice":97.6,"underlyingValue":18314.8}},{"strikePrice":18350,"expiryDate":"18-May-2023","CE":{"strikePrice":18350,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18350.00","openInterest":58805,"changeinOpenInterest":18089,"pchangeinOpenInterest":44.427252185872874,"totalTradedVolume":1732226,"impliedVolatility":7.95,"lastPrice":71.95,"change":-17.299999999999997,"pChange":-19.38375350140056,"totalBuyQuantity":1222750,"totalSellQuantity":475950,"bidQty":100,"bidprice":71.75,"askQty":50,"askPrice":71.95,"underlyingValue":18314.8},"PE":{"strikePrice":18350,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18350.00","openInterest":17862,"changeinOpenInterest":5588,"pchangeinOpenInterest":45.52713051979795,"totalTradedVolume":731813,"impliedVolatility":10.88,"lastPrice":102.1,"change":-8.650000000000006,"pChange":-7.810383747178334,"totalBuyQuantity":121750,"totalSellQuantity":135350,"bidQty":100,"bidprice":104.45,"askQty":10000,"askPrice":104.5,"underlyingValue":18314.8}},{"strikePrice":18400,"expiryDate":"18-May-2023","CE":{"strikePrice":18400,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18400.00","openInterest":86026,"changeinOpenInterest":18713,"pchangeinOpenInterest":27.7999792016401,"totalTradedVolume":2095164,"impliedVolatility":8.02,"lastPrice":50.9,"change":-15.149999999999999,"pChange":-22.937168811506435,"totalBuyQuantity":1466100,"totalSellQuantity":591800,"bidQty":2250,"bidprice":50.9,"askQty":100,"askPrice":50.95,"underlyingValue":18314.8},"PE":{"strikePrice":18400,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18400.00","openInterest":20310,"changeinOpenInterest":1447,"pchangeinOpenInterest":7.67110215766315,"totalTradedVolume":672852,"impliedVolatility":11.11,"lastPrice":134.05,"change":-3.6999999999999886,"pChange":-2.686025408348449,"totalBuyQuantity":77600,"totalSellQuantity":146350,"bidQty":250,"bidprice":133.45,"askQty":350,"askPrice":134.05,"underlyingValue":18314.8}},{"strikePrice":18450,"expiryDate":"18-May-2023","PE":{"strikePrice":18450,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18450.00","openInterest":3879,"changeinOpenInterest":2134,"pchangeinOpenInterest":122.29226361031519,"totalTradedVolume":101246,"impliedVolatility":11.29,"lastPrice":166.95,"change":-1.3500000000000227,"pChange":-0.8021390374331685,"totalBuyQuantity":37500,"totalSellQuantity":43850,"bidQty":50,"bidprice":166.05,"askQty":50,"askPrice":166.8,"underlyingValue":18314.8},"CE":{"strikePrice":18450,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18450.00","openInterest":34531,"changeinOpenInterest":11963,"pchangeinOpenInterest":53.00868486352357,"totalTradedVolume":948214,"impliedVolatility":8,"lastPrice":34.1,"change":-12.899999999999999,"pChange":-27.44680851063829,"totalBuyQuantity":152550,"totalSellQuantity":201750,"bidQty":6900,"bidprice":34,"askQty":250,"askPrice":34.4,"underlyingValue":18314.8}},{"strikePrice":18500,"expiryDate":"18-May-2023","PE":{"strikePrice":18500,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023PE18500.00","openInterest":9917,"changeinOpenInterest":-277,"pchangeinOpenInterest":-2.717284677261134,"totalTradedVolume":162129,"impliedVolatility":11.67,"lastPrice":204.1,"change":0.44999999999998863,"pChange":0.22096734593665046,"totalBuyQuantity":59800,"totalSellQuantity":48400,"bidQty":150,"bidprice":204.25,"askQty":350,"askPrice":205,"underlyingValue":18314.8},"CE":{"strikePrice":18500,"expiryDate":"18-May-2023","underlying":"NIFTY","identifier":"OPTIDXNIFTY18-05-2023CE18500.00","openInterest":122463,"changeinOpenInterest":44418,"pchangeinOpenInterest":56.913319238900634,"totalTradedVolume":1752429,"impliedVolatility":8.06,"lastPrice":22.3,"change":-10.3,"pChange":-31.595092024539877,"totalBuyQuantity":375700,"totalSellQuantity":609300,"bidQty":2200,"bidprice":22.3,"askQty":50,"askPrice":22.65,"underlyingValue":18314.8}}]}'
+        debugger;
+        for (let index = 0; index < 5; index++) {
+          addToTradeList(JSON.parse(data));
+        }
+        var strike = getStrikes();
+        populator.populate('.strikePrice', strike);
+</script>
+</head>
+<body>
+  
+<table>
+  <tr class="strikePrice">
+    <td>{{strikePrice}}</td>
+    <td>{{PCR0}}</td>
+    <td>{{PCR1}}</td>
+    <td>{{PCR2}}</td>
+    <td>{{PCR3}}</td>
+    <td>{{PCR5}}</td>
+  </tr>
+ </table>
+
+</body>
 </html>
